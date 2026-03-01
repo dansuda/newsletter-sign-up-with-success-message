@@ -14,6 +14,7 @@ const dismiss = document.getElementById("dismiss-btn");
 emailInput.addEventListener("input", (event) => {
   if (emailInput.validity.valid) {
     valid.textContent = "";
+    emailInput.className = "valid-email";
   } else {
     showError();
   }
