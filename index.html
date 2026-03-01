@@ -47,7 +47,7 @@
         <li class="updates__item"><img src="./assets/images/icon-list.svg" alt="orange correct icon">And much more!</li>
       </ul>
 
-      <form id="container__email" class="container__email" novalidate>
+      <form id="container__email" class="container__email" novalidate onsubmit="showError(); return false">
         <div class="email-text">
           <label for="email-field">Email address</label>
           <p id="valid-error-text" class="valid"></p>

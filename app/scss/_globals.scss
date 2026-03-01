@@ -199,8 +199,6 @@ body {
         width: 87.2%;
         padding-block-start: 9.375rem;
 
-        transition: all 500ms ease-in-out;
-
         img {
             margin-block-end: 2rem;
             max-width: min-content;
@@ -331,12 +329,6 @@ body {
                 // font-size: 7vw;
                 font-size: clamp(2.5rem, 3.5rem, 6vw);
             }
-        }
-
-        &__success {
-            min-height: 100%;
-            padding: 1.5rem 2.5rem 2.5rem 2.5rem;
-            width: 100%;
         }
     }
 }

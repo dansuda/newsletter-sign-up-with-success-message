@@ -1,8 +1,8 @@
 const container = document.querySelector(".container");
 const containerImg = document.querySelector(".container__img");
 const containerTxt = document.querySelector(".container__text");
-const containerThanks = document.getElementById("container__success");
 
+const containerThanks = document.getElementById("container__success");
 const emailForm = document.getElementById("container__email");
 const valid = document.getElementById("valid-error-text");
 const emailInput = document.getElementById("email-field");
@@ -28,10 +28,17 @@ emailForm.addEventListener("submit", (event) => {
     containerImg.className = "hidden";
     containerTxt.className = "hidden";
     containerThanks.className = "container__success";
-    emailInput.className = "valid-email";
     spanFeedback.textContent = emailInput.value;
     emailForm.reset();
+    emailInput.className = "valid-email";
   }
+});
+
+dismiss.addEventListener("click", (event) => {
+  container.style.maxWidth = "928px";
+  containerImg.className = "container__img";
+  containerTxt.className = "container__text";
+  containerThanks.className = "hidden";
 });
 
 function showError() {
@@ -43,10 +50,3 @@ function showError() {
     valid.textContent = "Valid Email Required";
   }
 }
-
-dismiss.addEventListener("click", (event) => {
-  container.style.maxWidth = "928px";
-  containerImg.className = "container__img";
-  containerTxt.className = "container__text";
-  containerThanks.className = "hidden";
-});

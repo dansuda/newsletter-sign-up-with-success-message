@@ -151,7 +151,6 @@ body {
   min-height: 90svh;
   width: 87.2%;
   padding-block-start: 9.375rem;
-  transition: all 500ms ease-in-out;
 }
 .container__success img {
   margin-block-end: 2rem;
@@ -255,10 +254,5 @@ body {
   }
   .container__text h1 {
     font-size: clamp(2.5rem, 3.5rem, 6vw);
-  }
-  .container__success {
-    min-height: 100%;
-    padding: 1.5rem 2.5rem 2.5rem 2.5rem;
-    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
