@@ -33,6 +33,7 @@ h1 {
     font-family: inherit;
     font-size: inherit;
     font-weight: $extrabold;
+    -webkit-tap-highlight-color: transparent; // for mobile clicking
 
     border: none;
     cursor: pointer;
