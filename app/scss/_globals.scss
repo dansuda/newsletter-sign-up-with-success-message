@@ -1,0 +1,342 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    margin: 0;
+    line-height: 1;
+}
+
+
+
+
+.hidden {
+    display: none;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.125rem 2rem;
+    border-radius: 0.5rem;
+
+    text-align: center;
+    text-decoration: none;
+
+    background-color: $blue800;
+    color: $white;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: $extrabold;
+
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background: $gradient;
+        box-shadow: 0 5px 35px -10px $red;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+
+
+
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    font-family: $roboto;
+    font-size: clamp(1rem, 1rem, 1.75vw);
+    color: $blue800;
+    line-height: 1.5;
+
+    background-color: $blue700;
+}
+
+.container {
+    min-height: 100svh;
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: $white;
+
+    &__img {
+        width: 100%;
+
+        .mobile-img {
+            width: 100%;
+        }
+
+        .tablet-img,
+        .desktop-img {
+            display: none;
+        }
+    }
+
+    &__text {
+        width: 87.2%;
+        padding: 2rem 0;
+
+        h1 {
+            font-size: clamp(2.5rem, 3.5rem, 6vw);
+        }
+
+        p {
+            margin-block: 1.5rem;
+        }
+    }
+
+    &__updates {
+        padding: 0;
+        list-style-type: none;
+        margin-block-end: 2.25rem;
+
+        .updates__item {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .updates__item+.updates__item {
+            margin-block-start: 0.75rem;
+        }
+
+        img {
+            margin-inline-end: 1rem;
+        }
+    }
+
+    &__email {
+
+        .valid-email {
+            padding: 1rem 1.5rem;
+            width: 100%;
+            margin-block-end: 1.75rem;
+
+            font-family: inherit;
+            font-size: 1rem;
+            color: $grey;
+
+            border: 0.0625rem solid $grey;
+            border-radius: 0.5rem;
+
+            &:hover {
+                cursor: pointer;
+                border: 0.0625rem solid $blue800;
+            }
+
+            &:focus {
+                border: 0.0625rem solid $blue800;
+                outline: none;
+                color: $blue800;
+            }
+        }
+
+        .invalid-email {
+            padding: 1rem 1.5rem;
+            width: 100%;
+            margin-block-end: 1.75rem;
+
+            font-family: inherit;
+            font-size: 1rem;
+
+            border-radius: 0.5rem;
+
+            border: 0.0625rem solid $red;
+            background-color: hsla(4, 100%, 67%, 0.15);
+            color: $red;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:focus {
+                outline: none;
+                color: $red;
+            }
+
+        }
+
+
+        .email-text {
+            display: flex;
+            justify-content: space-between;
+
+            width: 100%;
+            margin-block-end: 0.5rem;
+
+            font-size: 0.75rem;
+            font-weight: $extrabold;
+
+            .valid {
+                color: $red;
+                margin: 0;
+            }
+        }
+    }
+
+    &__success {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        min-height: 90svh;
+        width: 87.2%;
+        padding-block-start: 9.375rem;
+
+        transition: all 500ms ease-in-out;
+
+        img {
+            margin-block-end: 2rem;
+            max-width: min-content;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 3.5rem, 6vw);
+        }
+
+        p {
+            margin-block-start: 1.5rem;
+
+            span {
+                font-weight: $extrabold;
+            }
+        }
+
+        a {
+            align-self: flex-end;
+        }
+    }
+
+}
+
+.attribution {
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 0;
+    left: 50vw;
+    transform: translateX(-50%);
+
+    font-size: 0.6875rem;
+    text-align: center;
+
+    color: $blue800;
+
+    a {
+        color: $link;
+    }
+}
+
+
+
+
+@media (min-width: 34.375rem) {
+
+    body {
+        display: flex;
+        align-items: center;
+        min-height: 100svh;
+    }
+
+    .container {
+        width: 95%;
+        min-height: auto;
+        margin: 2.5% auto;
+        padding: 1.5rem;
+        border-radius: 1.25rem;
+
+        &__img {
+            width: 94%;
+            padding-block-start: 3.5%;
+
+            .tablet-img {
+                display: block;
+                width: 100%;
+            }
+
+            .mobile-img,
+            .desktop-img {
+                display: none;
+            }
+        }
+
+        &__text {
+            width: 94%;
+        }
+
+        &__success {
+            min-height: 100%;
+            padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+            width: 100%;
+        }
+    }
+
+    .attribution {
+        color: $white;
+
+        a {
+            color: $red;
+        }
+    }
+}
+
+@media (min-width:56.25rem) {
+
+    .container {
+        max-width: 58rem;
+        max-height: 40rem;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &__img {
+            order: 2;
+            padding: 0;
+            width: 45%;
+
+            .desktop-img {
+                display: block;
+                margin-inline-start: auto;
+                width: 100%;
+            }
+
+            .mobile-img,
+            .tablet-img {
+                display: none;
+            }
+        }
+
+        &__text {
+            padding: 2.5rem;
+            width: 53%;
+            flex: 1;
+            max-height: 100%;
+
+            h1 {
+                // font-size: 7vw;
+                font-size: clamp(2.5rem, 3.5rem, 6vw);
+            }
+        }
+
+        &__success {
+            min-height: 100%;
+            padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+            width: 100%;
+        }
+    }
+}
